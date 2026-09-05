@@ -1,0 +1,82 @@
+:root {
+  --bg: #0a0a0a;
+  --bg2: #121212;
+  --bg3: #1a1a1a;
+  --line: #2b2b2b;
+  --text: #f2eee4;
+  --muted: #8d877b;
+  --bid: #d6ff3f;
+  --bury: #ff5a2a;
+  --idea: #8ab4ff;
+  --repo: #e0b34a;
+  --app: #3dd6c6;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.45 "IBM Plex Sans", system-ui, sans-serif; }
+a { color: inherit; }
+.frame { max-width: 760px; margin: 0 auto; padding: 20px 16px 80px; }
+.top { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.mark { font-family: "Instrument Serif", serif; font-size: 28px; text-decoration: none; letter-spacing: -0.03em; }
+.nav { display: flex; gap: 14px; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.nav a { text-decoration: none; }
+.nav a:hover { color: var(--text); }
+.strip { font-size: 13px; color: var(--muted); margin: 14px 0 18px; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.chip, select, input, textarea, button { font: inherit; }
+.chip {
+  border: 1px solid var(--line); background: transparent; color: var(--muted);
+  padding: 6px 10px; border-radius: 999px; cursor: pointer; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase;
+}
+.chip.on { color: var(--bg); background: var(--text); border-color: var(--text); }
+.search { width: 100%; background: var(--bg2); color: var(--text); border: 1px solid var(--line); padding: 10px 12px; margin-bottom: 16px; }
+.card {
+  background: var(--bg2); border: 1px solid var(--line); padding: 16px; margin-bottom: 10px;
+}
+.card:hover { border-color: #3a3a3a; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.badge { padding: 2px 7px; border: 1px solid currentColor; }
+.badge.idea { color: var(--idea); }
+.badge.repo { color: var(--repo); }
+.badge.app { color: var(--app); }
+.card h2, .detail h1 { font-family: "Instrument Serif", serif; font-weight: 400; letter-spacing: -0.03em; margin: 0 0 8px; font-size: 26px; }
+.card h2 a { text-decoration: none; }
+.pitch { color: #cfc8ba; margin: 0 0 14px; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.btn {
+  min-height: 44px; padding: 0 14px; border: 1px solid var(--line); background: var(--bg3);
+  color: var(--text); cursor: pointer; letter-spacing: 0.04em; text-transform: uppercase; font-size: 12px;
+}
+.btn.bid { border-color: #3d4a12; }
+.btn.bury { border-color: #4a2218; }
+.btn.bid.on { background: var(--bid); color: #111; border-color: var(--bid); }
+.btn.bury.on { background: var(--bury); color: #111; border-color: var(--bury); }
+.btn.ghost { background: transparent; }
+.score { margin-left: auto; font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--muted); }
+.watch, .offer, .form {
+  margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); display: grid; gap: 8px;
+}
+.form input, .form textarea, .watch input, .offer input, .offer textarea {
+  width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--line); padding: 10px 12px;
+}
+.consent { font-size: 12px; color: var(--muted); display: flex; gap: 8px; align-items: flex-start; }
+.note { font-size: 13px; color: var(--muted); }
+.ok { color: var(--bid); }
+.warn { color: var(--bury); }
+.detail .lead { font-size: 18px; color: #d7d0c3; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; }
+.row > * { flex: 1; min-width: 140px; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.stat { background: var(--bg2); border: 1px solid var(--line); padding: 12px; }
+.stat b { display: block; font-family: "IBM Plex Mono", monospace; font-size: 22px; }
+.stat span { color: var(--muted); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; }
+.share {
+  min-height: 70vh; display: grid; place-items: center; text-align: center; padding: 24px;
+}
+.share .box { border: 1px solid var(--line); padding: 32px 24px; width: 100%; }
+.share h1 { font-family: "Instrument Serif", serif; font-size: 40px; margin: 12px 0; }
+.empty { padding: 40px 8px; color: var(--muted); }
+@media (max-width: 640px) {
+  .stats { grid-template-columns: 1fr 1fr; }
+  .card h2, .detail h1 { font-size: 22px; }
+  .mark { font-size: 24px; }
+}
